@@ -46,6 +46,7 @@ func main() {
 	json_str, _ := json.Marshal(message)
 	log.Printf("[+] %s\n", string(json_str))
 
+	// see also... https://api.slack.com/messaging/webhooks#posting_with_webhooks
 	res, err := http.Post(url, "application/json", bytes.NewBuffer(json_str))
 	defer res.Body.Close()
 
